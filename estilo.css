@@ -1,0 +1,133 @@
+/* Protótipo de pesquisa: folha de estilo única, sem dependências.
+   Tokens de cor com razão de contraste calculada por scripts/contraste.py (G-05).
+   Registro completo em prototipo/tokens.md. */
+
+:root {
+  --cor-fundo: #ffffff;
+  --cor-fundo-suave: #f5f5f5;
+  --cor-texto: #1f2933;       /* 14,76:1 sobre #fff */
+  --cor-texto-suave: #4a5560; /* 7,61:1 sobre #fff; 6,98:1 sobre #f5f5f5 */
+  --cor-link: #1d5fa3;        /* 6,53:1 sobre #fff; 5,99:1 sobre #f5f5f5 */
+  --cor-foco: #1d5fa3;        /* indicador de foco ≥ 3:1 (G-13) */
+  --cor-cabecalho: #0b3a66;   /* fundo do cabeçalho; branco sobre ele = 11,59:1 */
+  --largura: 60rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { font-size: 100%; scroll-padding-top: 1rem; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--cor-texto);
+  background: var(--cor-fundo);
+}
+
+img, svg { max-width: 100%; height: auto; }
+
+/* G-01, G-06: links sublinhados e com cor de contraste suficiente */
+a { color: var(--cor-link); text-decoration: underline; text-underline-offset: 0.15em; overflow-wrap: anywhere; }
+a:hover { text-decoration-thickness: 0.15em; }
+
+/* G-13: foco sempre visível */
+:focus-visible { outline: 3px solid var(--cor-foco); outline-offset: 2px; }
+
+/* G-08: link de salto visível ao receber foco */
+.pular {
+  position: absolute; left: -999rem; top: 0.5rem; z-index: 10;
+  background: var(--cor-fundo); color: var(--cor-link); padding: 0.5rem 1rem;
+}
+.pular:focus { left: 0.5rem; }
+
+.visualmente-oculto {
+  position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+.envoltorio { max-width: var(--largura); margin-inline: auto; padding-inline: 1rem; }
+
+/* Cabeçalho */
+.cabecalho { background: var(--cor-cabecalho); color: #ffffff; padding: 1rem 0; }
+.cabecalho a { color: #ffffff; }
+.nome-site { font-size: 1.25rem; font-weight: 700; margin: 0; }
+.nome-site a { text-decoration: none; }
+.nome-site a:hover, .nome-site a:focus-visible { text-decoration: underline; }
+.cabecalho :focus-visible { outline-color: #ffffff; }
+
+/* Navegação: <details> nativo, funciona sem JavaScript e por teclado (G-13) */
+.navegacao { background: var(--cor-fundo-suave); border-bottom: 1px solid #d0d5da; }
+.navegacao > .envoltorio > details > summary { font-weight: 700; }
+.navegacao ul { list-style: none; margin: 0; padding: 0; }
+.menu { display: flex; flex-wrap: wrap; gap: 0.25rem 1rem; padding: 0.5rem 0; }
+.menu > li { position: relative; }
+.menu a, .menu summary {
+  display: inline-block; min-height: 2.75rem; padding: 0.6rem 0.25rem; /* G-11: ≥ 24 px; 44 px no toque */
+  cursor: pointer;
+}
+.menu summary { color: var(--cor-link); text-decoration: underline; text-underline-offset: 0.15em; }
+.menu details ul {
+  background: var(--cor-fundo); border: 1px solid #d0d5da; padding: 0.25rem 0.75rem; margin-top: 0.25rem;
+}
+.menu details ul a { min-height: 2.75rem; }
+
+/* Conteúdo */
+main { padding-block: 1.5rem 3rem; }
+main:focus { outline: none; } /* destino do link de salto; não é controle */
+h1 { font-size: 2rem; line-height: 1.25; margin: 0.5rem 0 1rem; }
+h2 { font-size: 1.5rem; line-height: 1.3; margin: 2.25rem 0 0.75rem; }
+h3 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; }
+p, li { max-width: 70ch; }
+
+.migalhas ol { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.migalhas li + li::before { content: "›"; margin-right: 0.5rem; color: var(--cor-texto-suave); }
+
+.sumario { background: var(--cor-fundo-suave); padding: 0.5rem 1.25rem 1rem; border-left: 4px solid var(--cor-link); }
+.sumario h2 { margin-top: 0.75rem; font-size: 1.25rem; }
+.sumario li { margin-block: 0.25rem; }
+.sumario a { display: inline-block; min-height: 1.75rem; }
+
+/* Recuos herdados do original, agora em CSS (antes: style="margin-left: 24px") */
+.nivel-1 { margin-left: 1.5rem; }
+.nivel-2 { margin-left: 3rem; }
+.centralizado { text-align: center; font-weight: 700; }
+.data-documento { margin-top: 2rem; }      /* alinhado à esquerda (e-MAG 3.11) */
+.voltar-sumario { font-size: 0.95rem; }
+
+.lateral { border-top: 1px solid #d0d5da; margin-top: 2rem; padding-top: 1rem; }
+.lateral li { margin-block: 0.25rem; }
+.lateral a { display: inline-block; min-height: 1.75rem; }
+
+/* Rodapé */
+.rodape { background: var(--cor-fundo-suave); border-top: 1px solid #d0d5da; padding: 1.5rem 0; }
+.rodape ul { list-style: none; padding: 0; margin: 0 0 1rem; display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; }
+.rodape a { display: inline-flex; align-items: center; gap: 0.5rem; min-height: 2.75rem; }
+.simbolo-acessibilidade { width: 1.75rem; height: 1.75rem; flex: none; }
+
+@media (max-width: 40rem) {
+  h1 { font-size: 1.6rem; }
+  .menu { flex-direction: column; gap: 0; }
+  .nivel-1 { margin-left: 0.75rem; }
+  .nivel-2 { margin-left: 1.5rem; }
+}
+
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+
+/* G-11: links isolados (migalhas, "voltar ao sumário") com alvo ≥ 24 px */
+.migalhas a, .voltar-sumario a { display: inline-block; min-height: 1.75rem; padding-block: 0.15rem; }
+
+/* --- Específico da página inicial da OBM --- */
+.descricao-menu { display: block; font-size: 0.9rem; color: var(--cor-texto-suave); margin: -0.5rem 0 0.5rem; }
+.sobre { font-size: 1.15rem; }
+.lista-links li, .cartoes > li, .eventos > li { margin-block: 0.5rem; }
+.lista-links a { display: inline-block; min-height: 1.75rem; padding-block: 0.15rem; }
+.cartoes { list-style: none; padding: 0; }
+.cartoes > li { border: 1px solid #d0d5da; border-radius: 0.25rem; padding: 0.25rem 1rem 0.5rem; }
+.cartoes h3 { margin: 0.5rem 0; font-size: 1.1rem; }
+.eventos { list-style: none; padding: 0; }
+.eventos > li { border-left: 4px solid var(--cor-link); padding: 0.25rem 0 0.25rem 1rem; }
+.eventos p { margin: 0.15rem 0; }
+.evento-data { color: var(--cor-texto); }
+main section > p > a, .rodape p a { display: inline-block; min-height: 1.75rem; }
