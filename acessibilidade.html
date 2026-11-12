@@ -4,37 +4,51 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Acessibilidade desta recriação | OBM</title>
-<link rel="stylesheet" href="estilo.css">
+<title>Acessibilidade desta versão | OBM - Olimpíada Brasileira de Matemática</title>
+<link rel="stylesheet" href="acessibilidade.css">
 </head>
-<body>
-<a class="pular" href="#conteudo">Ir para o conteúdo</a>
-<header class="cabecalho">
-  <div class="envoltorio">
-    <p class="nome-site"><a href="index.html">OBM: página inicial, recriação acessível</a></p>
-  </div>
-</header>
-<main id="conteudo" tabindex="-1">
-  <div class="envoltorio">
-    <h1>Acessibilidade desta recriação</h1>
-    <p>Esta página é uma recriação, feita para pesquisa, da <a href="https://www.obm.org.br/">página inicial oficial da Olimpíada Brasileira de Matemática</a>. Ela não é o site oficial e não é atualizada.</p>
-    <h2>Meta</h2>
-    <p>Atender aos critérios de nível A e AA das Diretrizes de Acessibilidade para Conteúdo Web (WCAG) 2.2 e ao art. 63 da Lei Brasileira de Inclusão.</p>
-    <h2>Recursos</h2>
-    <ul>
-      <li>Link "Ir para o conteúdo" no primeiro Tab.</li>
-      <li>Menu navegável por teclado, sem JavaScript.</li>
-      <li>Zoom liberado; o texto se reorganiza em telas estreitas.</li>
-      <li>Cores com contraste mínimo de 4,5:1 para texto.</li>
-    </ul>
-    <h2>Avaliação</h2>
-    <p>Avaliada com ASES, WAVE e Lighthouse e por inspeção manual, segundo um protocolo de pesquisa da UFC Quixadá (2026).</p>
-  </div>
+<body class="pagina-acessibilidade">
+<a class="skip-link" href="#main">Ir para o conteúdo</a>
+<main id="main" tabindex="-1">
+  <h1>Acessibilidade desta versão</h1>
+  <p>Esta é uma versão corrigida, para pesquisa, da <a href="https://www.obm.org.br/">página oficial</a> (OBM - Olimpíada Brasileira de Matemática). Não é o site oficial e não é atualizada.</p>
+  <h2>Meta</h2>
+  <p>Critérios de nível A e AA das Diretrizes de Acessibilidade para Conteúdo Web (WCAG) 2.2 e art. 63 da Lei Brasileira de Inclusão, mantendo o visual original.</p>
+  <h2>Correções aplicadas</h2>
+  <ul>
+      <li>scripts do original removidos (20); links e recursos relativos tornados absolutos</li>
+      <li>viewport sem bloqueio de zoom</li>
+      <li>link &quot;Ir para o conteúdo&quot; como primeiro elemento</li>
+      <li>título da página identifica que é a página inicial (1×)</li>
+      <li>desenho em &lt;canvas&gt; feito por JavaScript (vazio sem script) removido (1×)</li>
+      <li>logotipo (único conteúdo do link) com texto alternativo (1×)</li>
+      <li>campo de busca com rótulo (placeholder não é rótulo) (1×)</li>
+      <li>botão de imagem da busca com texto alternativo (1×)</li>
+      <li>ícone do Facebook no topo ganha nome (1×)</li>
+      <li>atributo title igual ao texto do link removido (6×)</li>
+      <li>&lt;div class=&quot;header-main&quot;&gt; fechado antes do fim do cabeçalho (HTML válido) (1×)</li>
+      <li>descrições de submenu (só visuais) não repetidas ao leitor de tela (17×)</li>
+      <li>conteúdo dentro de &lt;main&gt;, com h1 (visualmente oculto: o original não tem título visível) (1×)</li>
+      <li>fim do &lt;main&gt; (1×)</li>
+      <li>títulos de seção (Novidades, Calendário, Destaques) viram h2 (3×)</li>
+      <li>títulos dos cartões viram h3 (8×)</li>
+      <li>sinal &quot;+&quot; decorativo escondido do leitor de tela (8×)</li>
+      <li>botão &quot;≡&quot; (só funcionava com JavaScript) vira link para o menu, que abre sem script (1×)</li>
+      <li>links &quot;Saiba mais&quot; dos banners com o assunto em texto oculto (2×)</li>
+      <li>itens do calendário deixam de ser links &quot;#&quot; sem destino (5×)</li>
+      <li>logotipos de parceiros (únicos conteúdos dos links) com o nome da instituição (4×)</li>
+      <li>link &quot;Tel&quot; sem número removido (1×)</li>
+      <li>e-mail que só aparecia com JavaScript passa a ser texto (1×)</li>
+      <li>link de e-mail vazio removido (1×)</li>
+      <li>ícone &quot;icon-facebook&quot; ganha nome (1×)</li>
+      <li>ícone &quot;icon-instagram&quot; ganha nome (1×)</li>
+      <li>ícone &quot;icon-youtube&quot; ganha nome (1×)</li>
+      <li>fechamentos de tag sem abertura removidos, herdados do original (1×; HTML válido)</li>
+      <li>símbolo e página de acessibilidade, link para o original e aviso no rodapé</li>
+  </ul>
+  <h2>Avaliação</h2>
+  <p>A verificação é feita com ASES, WAVE e Lighthouse e por inspeção manual (UFC Quixadá, 2026).</p>
+  <p><a href="index.html">Voltar à página</a></p>
 </main>
-<footer class="rodape">
-  <div class="envoltorio">
-    <ul><li><a href="index.html">Voltar à página inicial</a></li></ul>
-  </div>
-</footer>
 </body>
 </html>

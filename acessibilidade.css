@@ -1,0 +1,37 @@
+/* Ajustes mínimos de acessibilidade, carregados DEPOIS dos CSS originais (ACCESSIBILITY.md, seções 2, 5 e 6).
+   Não redesenha: só acrescenta o que falta. Ajustes de cor de cada site vêm abaixo, no bloco específico. */
+.visually-hidden { position:absolute !important; width:1px; height:1px; margin:-1px; padding:0; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0; }
+.skip-link { position:absolute; left:-999rem; top:.5rem; z-index:100000; padding:.5rem 1rem; background:#fff; color:#1f2933; font-size:1rem; }
+.skip-link:focus { left:.5rem; }
+:focus-visible { outline: 3px solid var(--focus-color, #1d5fa3) !important; outline-offset: 2px !important; }
+main p a[href], #main p a[href] { text-decoration: underline; }  /* links em texto corrido (1.4.1); cartões e menus mantêm o estilo */
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
+
+/* nota do rodapé acrescentada pela versão corrigida */
+.nota-prototipo { clear: both; font-size: .875rem; line-height: 1.5; padding: 1rem; text-align: center; background:#f5f5f5; color:#1f2933; }
+.nota-prototipo a { color:#1d5fa3; text-decoration: underline; display:inline-flex; align-items:center; gap:.35rem; min-height:24px; }
+.nota-prototipo p { margin:.25rem 0; }
+.simbolo-acessibilidade { width:1.5rem; height:1.5rem; }
+
+/* página "Acessibilidade desta versão" (não usa os CSS originais) */
+.pagina-acessibilidade { font-family: system-ui, sans-serif; line-height:1.6; color:#1f2933; max-width:60rem; margin:0 auto; padding:1rem; }
+.pagina-acessibilidade a { color:#1d5fa3; }
+
+/* menus refeitos com <details> no lugar de JavaScript */
+.menu-sem-js > summary { cursor:pointer; min-height:44px; display:flex; align-items:center; padding:0 .5rem; }
+
+/* --- OBM: azul da marca #5297dd (2,82:1 sobre #f5f5f5; 3,07:1 com texto branco) -> mesmo matiz, mais escuro #1d5fa3 (5,99:1 / 6,53:1) --- */
+:root { --focus-color: #1d5fa3; }
+h2.title-master { font-family: "PT Sans", Tahoma, sans-serif; font-size: 26px; font-weight: 700; line-height: normal; color: #1d5fa3; text-transform: uppercase; margin-top: 0px; margin-bottom: 20px; }
+h3.title { font-family: "PT Sans", Tahoma, sans-serif; font-size: 21px; font-weight: 700; line-height: normal; color: #1d5fa3; margin-top: 40px; margin-bottom: 20px; }
+.release-date span.month, .release-date span.day, #menu-principal > li > a > span { color: #1d5fa3 !important; }
+.btn-blue, .header-button a.btn-blue, .header-form input { background-color: #1d5fa3 !important; border-color: #1d5fa3 !important; }
+.header-form input::placeholder { color: #ffffff; opacity: 1; }
+/* menu recolhido (telas até 1024 px): abre quando é alvo do link "≡" ou quando recebe foco do teclado */
+.menu-wrapper:has(#menu-principal:target), .menu-wrapper:focus-within { max-height: 2000px; }
+.home-calendario a:not([href]) { cursor: default; }
+/* carrossel sem JavaScript: slides em sequência, nenhum escondido fora da tela */
+.carousel-single.swiper-wrapper { display: block; transform: none !important; }
+.carousel-single .swiper-slide { width: 100% !important; }
+/* alvos de toque do rodapé (antes 22 px de altura) */
+.footer-info a { display: inline-block; min-height: 24px; }
