@@ -1,0 +1,399 @@
+/*
+==============================================
+slowDown
+==============================================
+*/
+
+
+.slowDown{
+	animation-name: slowDown;
+	-webkit-animation-name: slowDown;	
+
+	animation-duration: 1.4s;	
+	-webkit-animation-duration: 1.4s;
+
+	animation-timing-function: ease;	
+	-webkit-animation-timing-function: ease;	
+
+	visibility: visible !important;						
+}
+
+@keyframes slowDown {
+	0% {
+		transform: translateY(-100%);
+	}
+	50%{
+		transform: translateY(8%);
+	}
+	
+	80%{
+		transform: translateY(4%);
+	}
+	95%{
+		transform: translateY(-2%);
+	}			
+	100% {
+		transform: translateY(0%);
+	}		
+}
+
+@-webkit-keyframes slowDown {
+	0% {
+		-webkit-transform: translateY(-100%);
+	}
+				
+	100% {
+		-webkit-transform: translateY(0%);
+	}	
+}
+
+
+/*
+==============================================
+slowUp
+==============================================
+*/
+
+
+.slowUp{
+	animation-name: slowUp;
+	-webkit-animation-name: slowUp;	
+
+	animation-duration: 1.4s;	
+	-webkit-animation-duration: 1.4s;
+
+	animation-timing-function: ease;	
+	-webkit-animation-timing-function: ease;
+
+	visibility: visible !important;			
+}
+
+@keyframes slowUp {
+	0% {
+		transform: translateY(100%);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0%);
+		opacity: 1;
+	}	
+}
+
+@-webkit-keyframes slowUp {
+	0% {
+		-webkit-transform: translateY(100%);
+		opacity: 0;
+	}
+	100% {
+		-webkit-transform: translateY(0%);
+		opacity: 1;
+	}	
+}
+
+
+/*
+==============================================
+slowLeft
+==============================================
+*/
+
+
+.slowLeft{
+	animation-name: slowLeft;
+	-webkit-animation-name: slowLeft;	
+
+	animation-duration: 1.4s;	
+	-webkit-animation-duration: 1.4s;
+
+	animation-timing-function: ease-in-out;	
+	-webkit-animation-timing-function: ease-in-out;		
+
+	visibility: visible !important;	
+}
+
+@keyframes slowLeft {
+	0% {
+		transform: translateX(150%);
+		opacity: 0;
+	}
+	100% {
+		transform: translateX(0%);
+		opacity: 1;
+	}
+}
+
+@-webkit-keyframes slowLeft {
+	0% {
+		-webkit-transform: translateX(150%);
+		opacity: 0;
+	}
+	100% {
+		-webkit-transform: translateX(0%);
+		opacity: 1;
+	}
+}
+
+/*
+==============================================
+slowRight
+==============================================
+*/
+
+
+.slowRight{
+	animation-name: slowRight;
+	-webkit-animation-name: slowRight;	
+
+	animation-duration: 1.4s;	
+	-webkit-animation-duration: 1.4s;
+
+	animation-timing-function: ease-in-out;	
+	-webkit-animation-timing-function: ease-in-out;		
+
+	visibility: visible !important;	
+}
+
+@keyframes slowRight {
+	0% {
+		transform: translateX(-150%);
+		opacity: 0;
+	}
+	100% {
+		transform: translateX(0%);
+		opacity: 1;
+	}	
+}
+
+@-webkit-keyframes slowRight {
+	0% {
+		-webkit-transform: translateX(-150%);
+		opacity: 0;
+	}
+	100% {
+		-webkit-transform: translateX(0%);
+		opacity: 1;
+	}
+}
+
+
+/*
+==============================================
+slowFadeIn
+==============================================
+*/
+
+.slowFadeIn{
+	animation-name: slowFadeIn;
+	-webkit-animation-name: slowFadeIn;	
+
+	animation-duration: 1.5s;	
+	-webkit-animation-duration: 1.5s;
+
+	animation-timing-function: ease-in-out;	
+	-webkit-animation-timing-function: ease-in-out;		
+
+	visibility: visible !important;	
+}
+
+@keyframes slowFadeIn {
+	0% {
+		transform: scale(0);
+		opacity: 0.0;		
+	}
+	60% {
+		transform: scale(1.1);	
+	}
+	80% {
+		transform: scale(0.9);
+		opacity: 1;	
+	}	
+	100% {
+		transform: scale(1);
+		opacity: 1;	
+	}		
+}
+
+@-webkit-keyframes slowFadeIn {
+	0% {
+		-webkit-transform: scale(0);
+		opacity: 0.0;		
+	}
+	60% {
+		-webkit-transform: scale(1.1);
+	}
+	80% {
+		-webkit-transform: scale(0.9);
+		opacity: 1;	
+	}	
+	100% {
+		-webkit-transform: scale(1);
+		opacity: 1;	
+	}		
+}
+
+
+/*
+==============================================
+slowOutLeft
+==============================================
+*/
+
+
+.slowOutLeft{
+	animation-name: slowOutLeft;
+	-webkit-animation-name: slowOutLeft;	
+
+	animation-duration: 1.4s;	
+	-webkit-animation-duration: 1.4s;
+
+	animation-timing-function: ease-in-out;	
+	-webkit-animation-timing-function: ease-in-out;		
+
+	visibility: visible !important;	
+}
+
+@keyframes slowOutLeft {
+	0% {
+		transform: translateX(0%);
+	}
+	100% {
+		transform: translateX(150%);
+	}
+}
+
+@-webkit-keyframes slowOutLeft {
+	0% {
+		-webkit-transform: translateX(0%);
+	}
+	100% {
+		-webkit-transform: translateX(150%);
+	}
+}
+
+
+
+/*
+==============================================
+abSlowRight
+==============================================
+*/
+
+
+.abSlowRight{
+	animation-name: abSlowRight;
+	-webkit-animation-name: abSlowRight;	
+
+	animation-duration: 1.4s;	
+	-webkit-animation-duration: 1.4s;
+
+	animation-timing-function: ease-in-out;	
+	-webkit-animation-timing-function: ease-in-out;		
+
+	visibility: visible !important;	
+}
+
+@keyframes abSlowRight {
+	0% {
+		left: -150%;
+	}
+	100% {
+		left: 50%;
+	}	
+}
+
+@-webkit-keyframes abSlowRight {
+	0% {
+		left: 50%;
+	}
+	100% {
+		left: -150%;
+	}
+}
+
+
+
+/*
+==============================================
+diagonalLeftUp
+==============================================
+*/
+
+
+.diagonalLeftUp{
+	animation-name: diagonalLeftUp;
+	-webkit-animation-name: diagonalLeftUp;	
+
+	animation-duration: 1.4s;	
+	-webkit-animation-duration: 1.4s;
+
+	animation-timing-function: ease-in-out;	
+	-webkit-animation-timing-function: ease-in-out;		
+
+	visibility: visible !important;	
+}
+
+@keyframes diagonalLeftUp {
+	0% {
+		transform: translate(150%, 250%);
+		opacity: 0;
+	}
+	100% {
+		transform: translate(0%);
+		opacity: 1;
+	}
+}
+
+@-webkit-keyframes diagonalLeftUp {
+	0% {
+		-webkit-transform: translate(150%, 250%);
+		opacity: 0;
+	}
+	100% {
+		-webkit-transform: translate(0%);
+		opacity: 1;
+	}
+}
+
+
+
+/*
+==============================================
+masking
+==============================================
+*/
+
+
+.masking{
+	animation-name: masking;
+	-webkit-animation-name: masking;	
+
+	animation-duration: 4s;
+	-webkit-animation-duration: 4s;
+
+	animation-timing-function: ease-in-out;	
+	-webkit-animation-timing-function: ease-in-out;		
+
+	visibility: visible !important;	
+}
+
+@keyframes masking {
+	0% {
+		-webkit-clip-path: inset(0 99% 0 0);
+		clip-path: inset(0 99% 0 0);
+	}
+	100% {
+		-webkit-clip-path: inset(0 0 0 0);
+		clip-path: inset(0 0 0 0);
+	}
+}
+
+@-webkit-keyframes masking {
+	0% {
+		-webkit-clip-path: inset(0 99% 0 0);
+		clip-path: inset(0 99% 0 0);
+	}
+	100% {
+		-webkit-clip-path: inset(0 0 0 0);
+		clip-path: inset(0 0 0 0);
+	}
+}
